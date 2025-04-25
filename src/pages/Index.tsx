@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
@@ -6,6 +7,11 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   
   const projects = [
+    {
+      title: "Deploying Applications on Kubernetes using GitOps and Argo CD",
+      description: "A comprehensive guide on implementing GitOps practices with Kubernetes and Argo CD for streamlined application deployment and management.",
+      link: "https://medium.com/@haidersarfraz0323/how-to-deploy-applications-on-kubernetes-using-gitops-and-argo-cd-0fb9ef5d15f8",
+    },
     {
       title: "Security Monitoring System on AWS",
       description: "A guide on building a comprehensive security monitoring system using AWS CloudTrail, CloudWatch, and SNS for enhanced cloud infrastructure security.",
