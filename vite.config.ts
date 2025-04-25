@@ -5,7 +5,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // IMPORTANT: If you deploy this to GitHub Pages, change the value below to your repo name.
-const repoName = "project-showcase-only"; // <-- Change to match your GitHub repo if needed
+const repoName = "project-showcase-github"; // <-- Updated to match your GitHub repo
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
