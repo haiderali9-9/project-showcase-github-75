@@ -1,8 +1,11 @@
 
+import { useState } from "react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 
 const Index = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  
   const projects = [
     {
       title: "Deploying Applications on Kubernetes using GitOps and Argo CD",
@@ -31,21 +34,33 @@ const Index = () => {
     },
   ];
 
+  // Filter projects based on search query
+  const filteredProjects = projects.filter((project) => 
+    project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    project.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen bg-background">
-      <Hero />
+      <Hero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              link={project.link}
-            />
-          ))}
-        </div>
+        {filteredProjects.length === 0 ? (
+          <div className="text-center py-8">
+            <p className="text-lg text-muted-foreground">No projects found matching your search.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+              />
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );

@@ -2,7 +2,12 @@
 import { Search } from "lucide-react";
 import { Input } from "./ui/input";
 
-const Hero = () => {
+interface HeroProps {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}
+
+const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto text-center">
@@ -16,6 +21,8 @@ const Hero = () => {
             <Input 
               placeholder="Search projects..." 
               className="pl-10"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>
