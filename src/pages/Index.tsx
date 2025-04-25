@@ -9,7 +9,26 @@ const Index = () => {
       description: "A comprehensive guide on implementing GitOps practices with Kubernetes and Argo CD for streamlined application deployment and management.",
       link: "https://medium.com/@haidersarfraz0323/how-to-deploy-applications-on-kubernetes-using-gitops-and-argo-cd-0fb9ef5d15f8",
     },
-    // More projects can be added here
+    {
+      title: "Monster Rolodex",
+      description: "A React application that displays a collection of monsters with search functionality and responsive design.",
+      link: "https://github.com/haiderali9-9/-monster-rolodox",
+    },
+    {
+      title: "Meal Search",
+      description: "An application to search for meals and recipes with detailed information and instructions.",
+      link: "https://github.com/haiderali9-9/mealsearch",
+    },
+    {
+      title: "Find Pokemon",
+      description: "A Pokemon search application built with modern web technologies to explore and discover Pokemon.",
+      link: "https://github.com/haiderali9-9/FindPokemon",
+    },
+    {
+      title: "Carpool",
+      description: "A carpooling platform to connect drivers and passengers for shared rides and sustainable transportation.",
+      link: "https://github.com/haiderali9-9/Carpool",
+    },
   ];
 
   return (
