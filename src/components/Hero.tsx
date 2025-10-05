@@ -11,7 +11,7 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-primary">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent">
           Projects
         </h1>
         
@@ -47,7 +47,7 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
             "Linux",
             "Bash"
           ].map((skill) => (
-            <span key={skill} className="bg-secondary px-2 py-1 rounded-full text-sm">
+            <span key={skill} className="bg-gradient-to-r from-[hsl(var(--gradient-start)_/_0.15)] to-[hsl(var(--gradient-end)_/_0.15)] px-3 py-1.5 rounded-full text-sm font-medium text-foreground border border-primary/20 hover:scale-105 transition-transform">
               {skill}
             </span>
           ))}
