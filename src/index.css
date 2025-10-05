@@ -39,9 +39,8 @@
 }
 
 .card-hover {
-  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
   position: relative;
-  overflow: hidden;
 }
 
 .card-hover::before {
@@ -57,6 +56,7 @@
     hsl(var(--gradient-end)) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
 .card-hover:hover::before {
@@ -65,10 +65,17 @@
 
 .card-gradient-border {
   position: relative;
-  background: linear-gradient(135deg, 
-    hsl(var(--gradient-start) / 0.1) 0%, 
-    hsl(var(--gradient-end) / 0.1) 100%);
-  border: 1px solid transparent;
+  background: white;
+  border: 2px solid transparent;
   background-clip: padding-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-gradient-border:hover {
+  border-color: hsl(var(--gradient-start) / 0.3);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 30px hsl(var(--gradient-start) / 0.2);
 }
 

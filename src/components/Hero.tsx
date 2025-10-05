@@ -10,20 +10,27 @@ interface HeroProps {
 const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
   return (
     <section className="py-20 px-4 relative overflow-hidden">
-      {/* Fun decorative emojis */}
-      <div className="absolute top-10 left-10 text-6xl opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}>
-        💡
+      {/* Tech-themed decorative elements */}
+      <div className="absolute top-10 left-10 text-5xl opacity-10 animate-pulse" style={{ animationDuration: '3s' }}>
+        &lt;/&gt;
       </div>
-      <div className="absolute top-20 right-20 text-5xl opacity-20 animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}>
-        🎨
+      <div className="absolute top-32 right-16 text-4xl opacity-10 animate-pulse" style={{ animationDuration: '4s' }}>
+        ⚙️
       </div>
-      <div className="absolute bottom-10 left-1/4 text-5xl opacity-20 animate-bounce" style={{ animationDelay: '2s', animationDuration: '3.5s' }}>
+      <div className="absolute bottom-20 left-20 text-4xl opacity-10 animate-pulse" style={{ animationDuration: '3.5s' }}>
         🔧
       </div>
+      <div className="absolute bottom-32 right-32 text-5xl opacity-10 animate-pulse" style={{ animationDuration: '4.5s' }}>
+        {'{ }'}
+      </div>
+      
+      {/* Gradient orbs for depth */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[hsl(var(--gradient-start)_/_0.1)] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-[hsl(var(--gradient-end)_/_0.1)] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
       
       <div className="max-w-3xl mx-auto text-center relative z-10">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent">
-          Projects 🚀
+        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent drop-shadow-sm">
+          My Projects Portfolio
         </h1>
         
         <div className="mt-8 relative max-w-xl mx-auto">
