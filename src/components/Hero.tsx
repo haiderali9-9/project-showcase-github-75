@@ -9,10 +9,21 @@ interface HeroProps {
 
 const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="py-20 px-4 relative overflow-hidden">
+      {/* Fun decorative emojis */}
+      <div className="absolute top-10 left-10 text-6xl opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}>
+        💡
+      </div>
+      <div className="absolute top-20 right-20 text-5xl opacity-20 animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}>
+        🎨
+      </div>
+      <div className="absolute bottom-10 left-1/4 text-5xl opacity-20 animate-bounce" style={{ animationDelay: '2s', animationDuration: '3.5s' }}>
+        🔧
+      </div>
+      
+      <div className="max-w-3xl mx-auto text-center relative z-10">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent">
-          Projects
+          Projects 🚀
         </h1>
         
         <div className="mt-8 relative max-w-xl mx-auto">
