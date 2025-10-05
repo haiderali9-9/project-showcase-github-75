@@ -18,6 +18,11 @@ const Index = () => {
       link: "https://medium.com/@haidersarfraz0323/build-a-security-monitoring-system-on-aws-cloudtrail-cloudwatch-sns-079e47494556",
     },
     {
+      title: "Windows RDP Connection Setup Guide",
+      description: "A complete step-by-step guide for setting up Remote Desktop Protocol (RDP) connections on Windows, including user creation, troubleshooting connection errors, and security configuration.",
+      link: "/project-showcase-github/Window_Rdp_Connection.pdf",
+    },
+    {
       title: "Monster Rolodex",
       description: "A React application that displays a collection of monsters with search functionality and responsive design.",
       link: "https://github.com/haiderali9-9/-monster-rolodox",

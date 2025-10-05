@@ -12,6 +12,7 @@ interface ProjectCardProps {
 const getProjectEmoji = (title: string, description: string) => {
   const text = (title + " " + description).toLowerCase();
   
+  if (text.includes('windows') || text.includes('rdp') || text.includes('remote desktop')) return '🪟';
   if (text.includes('kubernetes') || text.includes('k8s') || text.includes('docker')) return '🐳';
   if (text.includes('security') || text.includes('monitoring')) return '🔒';
   if (text.includes('aws') || text.includes('cloud')) return '☁️';
