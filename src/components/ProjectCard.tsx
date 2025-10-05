@@ -14,7 +14,7 @@ const ProjectCard = ({ title, description, link }: ProjectCardProps) => {
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           {title}
-          <ExternalLink className="h-5 w-5 text-muted-foreground" />
+          <ExternalLink className="h-6 w-6 text-muted-foreground shrink-0" />
         </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
