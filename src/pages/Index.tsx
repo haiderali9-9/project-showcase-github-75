@@ -9,6 +9,11 @@ const Index = () => {
   
   const projects = [
     {
+      title: "Server Monitoring and Website Uptime Monitoring with Grafana and Slack Alerting",
+      description: "Comprehensive guide on setting up Prometheus, Node Exporter, Blackbox Exporter, and Grafana for server monitoring and website uptime tracking with automated Slack alerts.",
+      link: "/server-monitoring.pdf",
+    },
+    {
       title: "End-to-End Deployment and Monitoring of PostgreSQL with PgAdmin, Prometheus, and Grafana on Kubernetes",
       description: "Complete guide on deploying and monitoring PostgreSQL with PgAdmin, Prometheus, and Grafana on Kubernetes for production-grade database management.",
       link: "https://medium.com/@haidersarfraz0323/you-can-check-that-your-kubernetes-node-is-running-with-ea2c5fc9ec2d",
