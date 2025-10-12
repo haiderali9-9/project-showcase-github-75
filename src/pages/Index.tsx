@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -71,6 +72,8 @@ const Index = () => {
           </div>
         )}
       </main>
+      
+      <Footer />
     </div>
   );
 };
