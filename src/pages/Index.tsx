@@ -9,6 +9,16 @@ const Index = () => {
   
   const projects = [
     {
+      title: "End-to-End Deployment and Monitoring of PostgreSQL with PgAdmin, Prometheus, and Grafana on Kubernetes",
+      description: "Complete guide on deploying and monitoring PostgreSQL with PgAdmin, Prometheus, and Grafana on Kubernetes for production-grade database management.",
+      link: "https://medium.com/@haidersarfraz0323/you-can-check-that-your-kubernetes-node-is-running-with-ea2c5fc9ec2d",
+    },
+    {
+      title: "Visualize Windows System Health in Real Time with Grafana and Prometheus",
+      description: "Learn how to set up real-time monitoring and visualization of Windows system health metrics using Grafana and Prometheus.",
+      link: "https://medium.com/@haidersarfraz0323/visualize-windows-system-health-in-real-time-with-grafana-and-prometheus-e40700650afa",
+    },
+    {
       title: "Deploying Applications on Kubernetes using GitOps and Argo CD",
       description: "A comprehensive guide on implementing GitOps practices with Kubernetes and Argo CD for streamlined application deployment and management.",
       link: "https://medium.com/@haidersarfraz0323/how-to-deploy-applications-on-kubernetes-using-gitops-and-argo-cd-0fb9ef5d15f8",
