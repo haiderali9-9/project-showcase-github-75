@@ -17,43 +17,64 @@ const ThreeScene = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     containerRef.current.appendChild(renderer.domElement);
 
-    // Create geometric shapes
-    const geometry1 = new THREE.IcosahedronGeometry(1, 0);
-    const geometry2 = new THREE.OctahedronGeometry(0.8, 0);
-    const geometry3 = new THREE.TetrahedronGeometry(0.6, 0);
+    // Create tech icon shapes with different colors
+    const techIcons: THREE.Mesh[] = [];
+    const iconConfigs = [
+      { shape: 'box', color: 0x06b6d4, size: 0.8, position: [-2, 1, 0], rotation: [0.5, 0.3] }, // Docker blue
+      { shape: 'cylinder', color: 0xff6b35, size: 0.6, position: [2, -1, 0], rotation: [0.3, 0.7] }, // Database orange
+      { shape: 'torus', color: 0x3b82f6, size: 0.5, position: [-1.5, -1.5, 0], rotation: [0.7, 0.5] }, // Kubernetes blue
+      { shape: 'octahedron', color: 0x10b981, size: 0.7, position: [1.8, 1.5, 0], rotation: [0.4, 0.6] }, // Node green
+      { shape: 'cone', color: 0xf59e0b, size: 0.6, position: [0, -2, 0], rotation: [0.6, 0.4] }, // AWS orange
+      { shape: 'tetrahedron', color: 0x8b5cf6, size: 0.5, position: [-2.5, 0, 0], rotation: [0.8, 0.2] }, // Purple accent
+      { shape: 'dodecahedron', color: 0xec4899, size: 0.4, position: [2.5, 0.5, 0], rotation: [0.2, 0.8] }, // Pink accent
+    ];
 
-    const material1 = new THREE.MeshPhongMaterial({
-      color: 0x06b6d4,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.6
+    iconConfigs.forEach(config => {
+      let geometry;
+      
+      switch(config.shape) {
+        case 'box':
+          geometry = new THREE.BoxGeometry(config.size, config.size, config.size);
+          break;
+        case 'cylinder':
+          geometry = new THREE.CylinderGeometry(config.size * 0.5, config.size * 0.5, config.size * 1.2, 8);
+          break;
+        case 'torus':
+          geometry = new THREE.TorusGeometry(config.size, config.size * 0.3, 8, 16);
+          break;
+        case 'octahedron':
+          geometry = new THREE.OctahedronGeometry(config.size);
+          break;
+        case 'cone':
+          geometry = new THREE.ConeGeometry(config.size * 0.6, config.size * 1.2, 8);
+          break;
+        case 'tetrahedron':
+          geometry = new THREE.TetrahedronGeometry(config.size);
+          break;
+        case 'dodecahedron':
+          geometry = new THREE.DodecahedronGeometry(config.size);
+          break;
+        default:
+          geometry = new THREE.BoxGeometry(config.size, config.size, config.size);
+      }
+
+      const material = new THREE.MeshPhongMaterial({
+        color: config.color,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.4
+      });
+
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.set(config.position[0], config.position[1], config.position[2]);
+      mesh.userData = { 
+        rotationSpeed: config.rotation,
+        basePosition: config.position.slice()
+      };
+      
+      scene.add(mesh);
+      techIcons.push(mesh);
     });
-    
-    const material2 = new THREE.MeshPhongMaterial({
-      color: 0x3b82f6,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.5
-    });
-
-    const material3 = new THREE.MeshPhongMaterial({
-      color: 0x8b5cf6,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.4
-    });
-
-    const shape1 = new THREE.Mesh(geometry1, material1);
-    const shape2 = new THREE.Mesh(geometry2, material2);
-    const shape3 = new THREE.Mesh(geometry3, material3);
-
-    shape1.position.set(0, 0, 0);
-    shape2.position.set(0, 0, 0);
-    shape3.position.set(0, 0, 0);
-
-    scene.add(shape1);
-    scene.add(shape2);
-    scene.add(shape3);
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -79,28 +100,24 @@ const ThreeScene = () => {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // Rotate shapes
-      shape1.rotation.x += 0.005;
-      shape1.rotation.y += 0.005;
-      
-      shape2.rotation.x -= 0.007;
-      shape2.rotation.y += 0.007;
-      
-      shape3.rotation.x += 0.009;
-      shape3.rotation.y -= 0.009;
+      // Rotate and animate tech icons
+      techIcons.forEach((icon, index) => {
+        const speed = icon.userData.rotationSpeed;
+        icon.rotation.x += speed[0] * 0.005;
+        icon.rotation.y += speed[1] * 0.005;
 
-      // Follow mouse
-      const targetX = mousePosition.current.x * 0.5;
-      const targetY = mousePosition.current.y * 0.5;
-      
-      shape1.position.x += (targetX - shape1.position.x) * 0.05;
-      shape1.position.y += (targetY - shape1.position.y) * 0.05;
-      
-      shape2.position.x += (targetX * 0.8 - shape2.position.x) * 0.03;
-      shape2.position.y += (targetY * 0.8 - shape2.position.y) * 0.03;
-      
-      shape3.position.x += (targetX * 0.6 - shape3.position.x) * 0.02;
-      shape3.position.y += (targetY * 0.6 - shape3.position.y) * 0.02;
+        // Floating effect
+        const time = Date.now() * 0.001;
+        const basePos = icon.userData.basePosition;
+        icon.position.y = basePos[1] + Math.sin(time + index) * 0.2;
+
+        // Subtle mouse interaction
+        const targetX = mousePosition.current.x * 0.3;
+        const targetY = mousePosition.current.y * 0.3;
+        const distance = 1 - (index * 0.1);
+        
+        icon.position.x += (basePos[0] + targetX * distance - icon.position.x) * 0.02;
+      });
 
       renderer.render(scene, camera);
     };
@@ -121,13 +138,13 @@ const ThreeScene = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
-      containerRef.current?.removeChild(renderer.domElement);
-      geometry1.dispose();
-      geometry2.dispose();
-      geometry3.dispose();
-      material1.dispose();
-      material2.dispose();
-      material3.dispose();
+      if (containerRef.current && renderer.domElement.parentNode === containerRef.current) {
+        containerRef.current.removeChild(renderer.domElement);
+      }
+      techIcons.forEach(icon => {
+        icon.geometry.dispose();
+        (icon.material as THREE.Material).dispose();
+      });
       renderer.dispose();
     };
   }, []);
