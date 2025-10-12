@@ -1,6 +1,5 @@
 import { Search } from "lucide-react";
 import { Input } from "./ui/input";
-import ThreeScene from "./ThreeScene";
 
 interface HeroProps {
   searchQuery: string;
@@ -10,9 +9,6 @@ interface HeroProps {
 const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
   return (
     <section className="py-20 px-4 relative overflow-hidden">
-      {/* 3D Background */}
-      <ThreeScene />
-      
       {/* Tech-themed decorative elements */}
       <div className="absolute top-10 left-10 text-5xl opacity-10 animate-pulse" style={{ animationDuration: '3s' }}>
         &lt;/&gt;
