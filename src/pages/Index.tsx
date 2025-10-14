@@ -9,38 +9,38 @@ const Index = () => {
   
   const projects = [
     {
-      title: "DotNet App Deployment and Database Setup on GCP",
-      description: "Complete guide on deploying ASP.NET applications on Google Cloud Platform with database configuration, firewall setup, and IIS management.",
+      title: "ASP.NET Cloud Deployment Platform",
+      description: "Production-ready ASP.NET application deployed on Google Cloud Platform with SQL Server database integration, IIS configuration, and secure firewall management.",
       link: "/DotNet_App_Deployment_and_Database_Setup.pdf",
     },
     {
-      title: "Server Monitoring and Website Uptime Monitoring with Grafana and Slack Alerting",
-      description: "Comprehensive guide on setting up Prometheus, Node Exporter, Blackbox Exporter, and Grafana for server monitoring and website uptime tracking with automated Slack alerts.",
+      title: "Server Monitoring Dashboard with Slack Integration",
+      description: "Real-time server and website uptime monitoring system built with Prometheus, Node Exporter, Blackbox Exporter, and Grafana featuring automated Slack alerting.",
       link: "/server-monitoring.pdf",
     },
     {
-      title: "End-to-End Deployment and Monitoring of PostgreSQL with PgAdmin, Prometheus, and Grafana on Kubernetes",
-      description: "Complete guide on deploying and monitoring PostgreSQL with PgAdmin, Prometheus, and Grafana on Kubernetes for production-grade database management.",
+      title: "PostgreSQL Monitoring Platform on Kubernetes",
+      description: "Enterprise-grade PostgreSQL deployment on Kubernetes with PgAdmin management interface and comprehensive monitoring via Prometheus and Grafana.",
       link: "https://medium.com/@haidersarfraz0323/you-can-check-that-your-kubernetes-node-is-running-with-ea2c5fc9ec2d",
     },
     {
-      title: "Visualize Windows System Health in Real Time with Grafana and Prometheus",
-      description: "Learn how to set up real-time monitoring and visualization of Windows system health metrics using Grafana and Prometheus.",
+      title: "Windows System Health Monitor",
+      description: "Real-time Windows system monitoring dashboard with Grafana and Prometheus integration for tracking CPU, memory, disk, and network performance metrics.",
       link: "https://medium.com/@haidersarfraz0323/visualize-windows-system-health-in-real-time-with-grafana-and-prometheus-e40700650afa",
     },
     {
-      title: "Deploying Applications on Kubernetes using GitOps and Argo CD",
-      description: "A comprehensive guide on implementing GitOps practices with Kubernetes and Argo CD for streamlined application deployment and management.",
+      title: "Kubernetes GitOps Deployment Pipeline",
+      description: "Automated application deployment system implementing GitOps methodology with Kubernetes and Argo CD for continuous delivery and infrastructure management.",
       link: "https://medium.com/@haidersarfraz0323/how-to-deploy-applications-on-kubernetes-using-gitops-and-argo-cd-0fb9ef5d15f8",
     },
     {
-      title: "Security Monitoring System on AWS",
-      description: "A guide on building a comprehensive security monitoring system using AWS CloudTrail, CloudWatch, and SNS for enhanced cloud infrastructure security.",
+      title: "AWS Cloud Security Monitoring System",
+      description: "Comprehensive security monitoring platform using AWS CloudTrail, CloudWatch, and SNS for real-time threat detection and automated security alerts.",
       link: "https://medium.com/@haidersarfraz0323/build-a-security-monitoring-system-on-aws-cloudtrail-cloudwatch-sns-079e47494556",
     },
     {
-      title: "Windows RDP Connection Setup Guide",
-      description: "A complete step-by-step guide for setting up Remote Desktop Protocol (RDP) connections on Windows, including user creation, troubleshooting connection errors, and security configuration.",
+      title: "Windows Remote Desktop Access Portal",
+      description: "Secure Windows RDP configuration system with user management, connection troubleshooting, and enhanced security protocols for remote access.",
       link: "/project-showcase-github/Window_Rdp_Connection.pdf",
     },
     {
