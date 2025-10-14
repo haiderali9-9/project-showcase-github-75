@@ -9,11 +9,6 @@ const Index = () => {
   
   const projects = [
     {
-      title: "ASP.NET Cloud Deployment Platform",
-      description: "Production-ready ASP.NET application deployed on Google Cloud Platform with SQL Server database integration, IIS configuration, and secure firewall management.",
-      link: "/DotNet_App_Deployment_and_Database_Setup.pdf",
-    },
-    {
       title: "Server Monitoring Dashboard with Slack Integration",
       description: "Real-time server and website uptime monitoring system built with Prometheus, Node Exporter, Blackbox Exporter, and Grafana featuring automated Slack alerting.",
       link: "/server-monitoring.pdf",
