@@ -9,6 +9,11 @@ const Index = () => {
   
   const projects = [
     {
+      title: "DotNet App Deployment and Database Setup on GCP",
+      description: "Complete guide on deploying ASP.NET applications on Google Cloud Platform with database configuration, firewall setup, and IIS management.",
+      link: "/DotNet_App_Deployment_and_Database_Setup.pdf",
+    },
+    {
       title: "Server Monitoring and Website Uptime Monitoring with Grafana and Slack Alerting",
       description: "Comprehensive guide on setting up Prometheus, Node Exporter, Blackbox Exporter, and Grafana for server monitoring and website uptime tracking with automated Slack alerts.",
       link: "/server-monitoring.pdf",
