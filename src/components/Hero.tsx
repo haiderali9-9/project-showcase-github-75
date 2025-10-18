@@ -1,5 +1,7 @@
-import { Search } from "lucide-react";
+import { Search, FileCode } from "lucide-react";
 import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface HeroProps {
   searchQuery: string;
@@ -7,6 +9,8 @@ interface HeroProps {
 }
 
 const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
+  const navigate = useNavigate();
+  
   return (
     <section className="py-20 px-4 relative overflow-hidden">
       {/* Tech-themed decorative elements */}
@@ -32,7 +36,7 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
           Projects
         </h1>
         
-        <div className="mt-8 relative max-w-xl mx-auto">
+        <div className="mt-8 relative max-w-xl mx-auto space-y-4">
           <div className="relative">
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
             <Input 
@@ -42,6 +46,15 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
+          
+          <Button 
+            onClick={() => navigate("/dockerfiles")}
+            variant="outline"
+            className="w-full"
+          >
+            <FileCode className="h-4 w-4 mr-2" />
+            View Docker Files Collection
+          </Button>
         </div>
 
         <p className="mt-8 text-lg leading-8 text-muted-foreground flex flex-wrap justify-center gap-2">
