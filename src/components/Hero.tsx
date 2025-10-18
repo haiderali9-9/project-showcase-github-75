@@ -1,4 +1,4 @@
-import { Search, FileCode } from "lucide-react";
+import { Search, FileCode, Terminal, BookOpen, GitBranch } from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,37 @@ interface HeroProps {
 
 const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
   const navigate = useNavigate();
+  
+  const navigationSections = [
+    {
+      title: "Docker Files",
+      description: "Production-ready Dockerfiles",
+      icon: FileCode,
+      route: "/dockerfiles",
+      available: true,
+    },
+    {
+      title: "Ansible Playbooks",
+      description: "Automation playbooks",
+      icon: Terminal,
+      route: "/ansible-playbooks",
+      available: false,
+    },
+    {
+      title: "Bash Scripts",
+      description: "Shell automation scripts",
+      icon: BookOpen,
+      route: "/bash-scripts",
+      available: false,
+    },
+    {
+      title: "CI/CD Pipelines",
+      description: "GitHub Actions workflows",
+      icon: GitBranch,
+      route: "/cicd-pipelines",
+      available: false,
+    },
+  ];
   
   return (
     <section className="py-20 px-4 relative overflow-hidden">
@@ -36,8 +67,8 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
           Projects
         </h1>
         
-        <div className="mt-8 relative max-w-xl mx-auto space-y-4">
-          <div className="relative">
+        <div className="mt-8 relative max-w-4xl mx-auto space-y-6">
+          <div className="relative max-w-xl mx-auto">
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
             <Input 
               placeholder="Search projects..." 
@@ -47,14 +78,30 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
             />
           </div>
           
-          <Button 
-            onClick={() => navigate("/dockerfiles")}
-            variant="outline"
-            className="w-full"
-          >
-            <FileCode className="h-4 w-4 mr-2" />
-            View Docker Files Collection
-          </Button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {navigationSections.map((section) => (
+              <Button
+                key={section.route}
+                onClick={() => section.available && navigate(section.route)}
+                variant="outline"
+                disabled={!section.available}
+                className="h-auto flex flex-col items-center gap-3 p-6 hover-scale transition-all hover:shadow-lg hover:border-primary/50 disabled:opacity-50"
+              >
+                <section.icon className="h-8 w-8 text-primary" />
+                <div className="text-center space-y-1">
+                  <div className="font-semibold">{section.title}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {section.description}
+                  </div>
+                </div>
+                {!section.available && (
+                  <span className="text-xs px-2 py-1 rounded-full bg-muted">
+                    Coming Soon
+                  </span>
+                )}
+              </Button>
+            ))}
+          </div>
         </div>
 
         <p className="mt-8 text-lg leading-8 text-muted-foreground flex flex-wrap justify-center gap-2">
