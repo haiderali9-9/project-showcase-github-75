@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import rocket from "@/assets/rocket.png";
+import rocket from "@/assets/rocket-new.png";
 
 const Footer = () => {
   return (
@@ -86,7 +86,7 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6 text-foreground flex items-center gap-2">
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                SYSTEM INFORMATION
+                INTRODUCTION
               </h3>
               <p className="text-muted-foreground font-mono text-sm leading-relaxed">
                 DevOps Engineer & Cloud Architect specializing in Kubernetes, AWS, and cloud-native technologies.
