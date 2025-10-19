@@ -107,12 +107,19 @@ const Footer = () => {
       {/* Bottom glow effect */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
       
-      {/* Animated Rocket */}
+      {/* Animated Rocket with Smoke Trail */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 animate-rocket-launch pointer-events-none">
+        {/* Smoke Trail */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-8 w-12 h-32 opacity-60">
+          <div className="absolute inset-0 bg-gradient-to-t from-orange-400/60 via-yellow-300/40 to-transparent blur-xl animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-gray-200/30 to-transparent blur-lg animate-pulse delay-150" />
+        </div>
+        
+        {/* Rocket */}
         <img 
           src={rocket} 
           alt="Rocket launching" 
-          className="w-20 h-20 object-contain drop-shadow-[0_0_20px_rgba(255,165,0,0.6)]"
+          className="w-20 h-20 object-contain -rotate-90 drop-shadow-[0_0_20px_rgba(255,165,0,0.6)]"
         />
       </div>
     </footer>
