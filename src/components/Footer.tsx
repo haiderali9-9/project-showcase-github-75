@@ -2,75 +2,109 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-background/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="relative border-t border-primary/30 bg-gradient-to-b from-background via-background to-primary/5 backdrop-blur-sm overflow-hidden">
+      {/* Sci-fi grid background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px),
+                           linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+
+      {/* Animated glow lines */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Get in Touch</h3>
-            <div className="space-y-3">
+          <div className="relative p-6 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 backdrop-blur-sm">
+            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary" />
+            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary" />
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary" />
+            
+            <h3 className="text-lg font-semibold mb-6 text-foreground flex items-center gap-2">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              COMMUNICATION CHANNELS
+            </h3>
+            <div className="space-y-4">
               <a 
                 href="https://github.com/haiderali9-9" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-primary before:transition-all before:duration-300 hover:before:h-full hover:translate-x-1"
               >
-                <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>github.com/haiderali9-9</span>
+                <Github className="h-5 w-5 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300" />
+                <span className="font-mono text-sm">github.com/haiderali9-9</span>
               </a>
               
               <a 
                 href="https://www.linkedin.com/in/hyderali99/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-primary before:transition-all before:duration-300 hover:before:h-full hover:translate-x-1"
               >
-                <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>linkedin.com/in/hyderali99</span>
+                <Linkedin className="h-5 w-5 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300" />
+                <span className="font-mono text-sm">linkedin.com/in/hyderali99</span>
               </a>
               
               <a 
                 href="mailto:haidersarfraz0323@gmail.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-primary before:transition-all before:duration-300 hover:before:h-full hover:translate-x-1"
               >
-                <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>haidersarfraz0323@gmail.com</span>
+                <Mail className="h-5 w-5 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300" />
+                <span className="font-mono text-sm">haidersarfraz0323@gmail.com</span>
               </a>
               
               <a 
                 href="mailto:haider.allee.99@gmail.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-primary before:transition-all before:duration-300 hover:before:h-full hover:translate-x-1"
               >
-                <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>haider.allee.99@gmail.com</span>
+                <Mail className="h-5 w-5 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300" />
+                <span className="font-mono text-sm">haider.allee.99@gmail.com</span>
               </a>
               
               <a 
                 href="tel:+923059903170"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-all duration-300 group relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-primary before:transition-all before:duration-300 hover:before:h-full hover:translate-x-1"
               >
-                <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span>+92 305 990 3170</span>
+                <Phone className="h-5 w-5 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300" />
+                <span className="font-mono text-sm">+92 305 990 3170</span>
               </a>
             </div>
           </div>
 
           {/* Additional Info */}
-          <div className="flex flex-col justify-between">
+          <div className="relative p-6 rounded-lg bg-gradient-to-br from-accent/5 to-primary/5 border border-accent/20 backdrop-blur-sm flex flex-col justify-between">
+            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-accent" />
+            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-accent" />
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-accent" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-accent" />
+            
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-foreground">About</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-semibold mb-6 text-foreground flex items-center gap-2">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                SYSTEM INFORMATION
+              </h3>
+              <p className="text-muted-foreground font-mono text-sm leading-relaxed">
                 DevOps Engineer & Cloud Architect specializing in Kubernetes, AWS, and cloud-native technologies.
               </p>
             </div>
-            <div className="mt-6">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} All rights reserved.
+            <div className="mt-6 pt-6 border-t border-accent/20">
+              <p className="text-sm text-muted-foreground font-mono flex items-center gap-2">
+                <span className="text-accent">©</span>
+                <span>{new Date().getFullYear()}</span>
+                <span className="text-accent">|</span>
+                <span>All rights reserved</span>
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Bottom glow effect */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
     </footer>
   );
 };
