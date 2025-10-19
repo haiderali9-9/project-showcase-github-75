@@ -49,6 +49,11 @@ const Index = () => {
       link: "/project-showcase-github/Window_Rdp_Connection.pdf",
     },
     {
+      title: "AWS Multi-Environment CI/CD Pipeline",
+      description: "Automated deployment pipeline for development and staging environments with AWS EC2, Application Load Balancer, SSL certificates, and custom domain configuration.",
+      link: "/Code_Pipeline_Dev_Staging_Certificate_LoadBalancer_Domain.pdf",
+    },
+    {
       title: "Monster Rolodex",
       description: "A React application that displays a collection of monsters with search functionality and responsive design.",
       link: "https://github.com/haiderali9-9/-monster-rolodox",
