@@ -1,6 +1,5 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import marshmallowFire1 from "@/assets/marshmallow-fire-1.jpg";
-import marshmallowFire2 from "@/assets/marshmallow-fire-2.jpg";
+import rocket from "@/assets/rocket.png";
 
 const Footer = () => {
   return (
@@ -108,18 +107,12 @@ const Footer = () => {
       {/* Bottom glow effect */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
       
-      {/* Decorative characters */}
-      <div className="relative flex justify-center items-center gap-8 pt-8 pb-4">
+      {/* Animated Rocket */}
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 animate-rocket-launch pointer-events-none">
         <img 
-          src={marshmallowFire1} 
-          alt="Decorative character" 
-          className="w-16 h-16 object-contain opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(255,165,0,0.6)]"
-        />
-        <div className="w-px h-8 bg-gradient-to-b from-transparent via-primary to-transparent" />
-        <img 
-          src={marshmallowFire2} 
-          alt="Decorative character" 
-          className="w-16 h-16 object-contain opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(255,165,0,0.6)]"
+          src={rocket} 
+          alt="Rocket launching" 
+          className="w-20 h-20 object-contain drop-shadow-[0_0_20px_rgba(255,165,0,0.6)]"
         />
       </div>
     </footer>
