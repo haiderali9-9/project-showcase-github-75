@@ -107,20 +107,38 @@ const Footer = () => {
       {/* Bottom glow effect */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
       
-      {/* Animated Rocket with Smoke Trail */}
+      {/* Animated Rocket with Enhanced Effects */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 animate-rocket-launch pointer-events-none">
-        {/* Smoke Trail */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-8 w-12 h-32 opacity-60">
-          <div className="absolute inset-0 bg-gradient-to-t from-orange-400/60 via-yellow-300/40 to-transparent blur-xl animate-pulse" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-gray-200/30 to-transparent blur-lg animate-pulse delay-150" />
+        {/* Enhanced Smoke Trail with Particles */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-8 w-16 h-40 opacity-70">
+          <div className="absolute inset-0 bg-gradient-to-t from-orange-500/70 via-yellow-400/50 to-transparent blur-2xl animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-t from-red-400/50 via-orange-300/40 to-transparent blur-xl animate-pulse" style={{ animationDelay: '0.3s' }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-gray-100/30 to-transparent blur-lg animate-pulse" style={{ animationDelay: '0.6s' }} />
         </div>
         
-        {/* Rocket */}
+        {/* Sparkles/Stars */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-6 w-24 h-24">
+          <div className="absolute top-2 left-0 w-1 h-1 bg-yellow-400 rounded-full animate-ping" style={{ animationDuration: '1.5s' }} />
+          <div className="absolute top-8 right-2 w-1 h-1 bg-orange-400 rounded-full animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
+          <div className="absolute top-14 left-4 w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDuration: '1.8s', animationDelay: '0.3s' }} />
+        </div>
+        
+        {/* Speed Lines */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-4 w-20 h-32 opacity-40">
+          <div className="absolute top-0 left-1/4 w-0.5 h-4 bg-gradient-to-t from-primary to-transparent animate-pulse" />
+          <div className="absolute top-2 right-1/4 w-0.5 h-6 bg-gradient-to-t from-primary to-transparent animate-pulse" style={{ animationDelay: '0.2s' }} />
+          <div className="absolute top-6 left-1/3 w-0.5 h-5 bg-gradient-to-t from-accent to-transparent animate-pulse" style={{ animationDelay: '0.4s' }} />
+        </div>
+        
+        {/* Rocket with rotation */}
         <img 
           src={rocket} 
           alt="Rocket launching" 
-          className="w-20 h-20 object-contain -rotate-90 drop-shadow-[0_0_20px_rgba(255,165,0,0.6)]"
+          className="w-20 h-20 object-contain rotate-0 drop-shadow-[0_0_25px_rgba(255,165,0,0.8)]"
         />
+        
+        {/* Glow ring around rocket */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-primary/20 animate-ping" style={{ animationDuration: '2s' }} />
       </div>
     </footer>
   );
