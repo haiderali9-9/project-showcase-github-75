@@ -64,8 +64,11 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
       
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent drop-shadow-sm">
-          Projects
+          DevOps Portfolio
         </h1>
+        <p className="mt-4 text-lg text-muted-foreground font-medium">
+          Cloud Infrastructure | Container Orchestration | CI/CD Automation
+        </p>
         
         <div className="mt-8 relative max-w-4xl mx-auto space-y-6">
           <div className="relative max-w-xl mx-auto">

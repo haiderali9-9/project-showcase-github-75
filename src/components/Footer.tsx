@@ -27,7 +27,7 @@ const Footer = () => {
             
             <h3 className="text-lg font-semibold mb-6 text-foreground flex items-center gap-2">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              COMMUNICATION CHANNELS
+              CONTACT
             </h3>
             <div className="space-y-4">
               <a 
@@ -89,7 +89,7 @@ const Footer = () => {
                 INTRODUCTION
               </h3>
               <p className="text-muted-foreground font-mono text-sm leading-relaxed">
-                DevOps Engineer & Cloud Architect specializing in Kubernetes, AWS, and cloud-native technologies.
+                Senior DevOps Engineer & Cloud Solutions Architect with expertise in Kubernetes orchestration, AWS infrastructure, CI/CD automation, and cloud-native application deployment. Specialized in building scalable, highly available systems with infrastructure-as-code and GitOps methodologies.
               </p>
             </div>
             <div className="mt-6 pt-6 border-t border-accent/20">
