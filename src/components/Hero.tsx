@@ -2,6 +2,7 @@ import { Search, FileCode, Terminal, BookOpen, GitBranch } from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
+import TypingAnimation from "./TypingAnimation";
 
 interface HeroProps {
   searchQuery: string;
@@ -64,7 +65,7 @@ const Hero = ({ searchQuery, setSearchQuery }: HeroProps) => {
       
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent drop-shadow-sm">
-          DevOps Portfolio
+          <TypingAnimation text="DevOps Portfolio" speed={80} />
         </h1>
         <p className="mt-4 text-lg text-muted-foreground font-medium">
           Cloud Infrastructure | Container Orchestration | CI/CD Automation

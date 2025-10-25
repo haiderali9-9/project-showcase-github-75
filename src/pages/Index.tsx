@@ -3,6 +3,9 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
+import Starfield from "@/components/Starfield";
+import ThemeToggle from "@/components/ThemeToggle";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -81,29 +84,34 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <Hero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {filteredProjects.length === 0 ? (
-          <div className="text-center py-8">
-            <p className="text-lg text-muted-foreground">No projects found matching your search.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-              />
-            ))}
-          </div>
-        )}
-      </main>
-      
-      <Footer />
+    <div className="min-h-screen bg-background relative">
+      <Starfield />
+      <ThemeToggle />
+      <div className="relative z-10">
+        <Hero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {filteredProjects.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-lg text-muted-foreground">No projects found matching your search.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProjects.map((project, index) => (
+                <ScrollReveal key={index} delay={index * 100}>
+                  <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    link={project.link}
+                  />
+                </ScrollReveal>
+              ))}
+            </div>
+          )}
+        </main>
+        
+        <Footer />
+      </div>
     </div>
   );
 };
