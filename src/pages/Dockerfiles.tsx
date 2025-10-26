@@ -119,6 +119,34 @@ EXPOSE 27017
 
 CMD ["mongod", "--auth"]`,
     },
+    {
+      title: ".NET 8.0 Application",
+      description: "Multi-stage build for .NET applications with ASP.NET Core runtime for production deployment.",
+      technologies: ["Docker", ".NET", "ASP.NET Core"],
+      content: `# Stage 1: Build the application
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy project files and restore dependencies
+COPY ["MyWebApp/MyWebApp.csproj", "MyWebApp/"]
+RUN dotnet restore "MyWebApp/MyWebApp.csproj"
+
+# Copy source code and build
+COPY . .
+WORKDIR "/src/MyWebApp"
+RUN dotnet build "MyWebApp.csproj" -c Release -o /app/build
+
+# Stage 2: Publish the application
+FROM build AS publish
+RUN dotnet publish "MyWebApp.csproj" -c Release -o /app/publish
+
+# Stage 3: Create runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=publish /app/publish .
+EXPOSE 80
+ENTRYPOINT ["dotnet", "MyWebApp.dll"]`,
+    },
   ];
 
   const handleDownload = (title: string, content: string) => {
