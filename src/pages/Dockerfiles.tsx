@@ -187,7 +187,7 @@ ENTRYPOINT ["dotnet", "MyWebApp.dll"]`,
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {dockerfiles.map((dockerfile, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
+            <Card key={index} className="hover:shadow-lg transition-shadow flex flex-col h-full">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -211,7 +211,7 @@ ENTRYPOINT ["dotnet", "MyWebApp.dll"]`,
                   ))}
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm max-h-64">
                   <code>{dockerfile.content}</code>
                 </pre>
