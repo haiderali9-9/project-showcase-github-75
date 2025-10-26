@@ -50,6 +50,11 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 199 89% 48%;
+    
+    /* Vibrant gradient colors for dark mode - brighter variants */
+    --gradient-start: 199 89% 58%;
+    --gradient-mid: 184 77% 62%;
+    --gradient-end: 173 80% 50%;
   }
 
   body {
